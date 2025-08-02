@@ -15,6 +15,10 @@ import HumanReproductionSimulation from '../components/simulations/HumanReproduc
 import AsexualReproductionSimulation from '../components/simulations/AsexualReproductionSimulation';
 import MendelExperimentsSimulation from '../components/simulations/MendelExperimentsSimulation';
 import DNAInheritanceSimulation from '../components/simulations/DNAInheritanceSimulation';
+import CellDivisionSimulation from '../components/simulations/CellDivisionSimulation';
+import GeneticEngineeringSimulation from '../components/simulations/GeneticEngineeringSimulation';
+import EvolutionSimulation from '../components/simulations/EvolutionSimulation';
+import PollutionEffectsSimulation from '../components/simulations/PollutionEffectsSimulation';
 import FoodChainSimulation from '../components/simulations/FoodChainSimulation';
 import EcosystemBalanceSimulation from '../components/simulations/EcosystemBalanceSimulation';
 import { ArrowLeft, Play, Pause, RotateCcw, Info } from 'lucide-react';
@@ -66,14 +70,28 @@ const SimulationView: React.FC = () => {
         return <MendelExperimentsSimulation isPlaying={isPlaying} />;
       case 'dna-inheritance':
         return <DNAInheritanceSimulation isPlaying={isPlaying} />;
+      case 'cell-division':
+        return <CellDivisionSimulation isPlaying={isPlaying} />;
+      case 'genetic-engineering':
+        return <GeneticEngineeringSimulation isPlaying={isPlaying} />;
+      case 'evolution-mechanisms':
+        return <EvolutionSimulation isPlaying={isPlaying} />;
+      case 'pollution-effects':
+        return <PollutionEffectsSimulation isPlaying={isPlaying} />;
       case 'food-chains':
         return <FoodChainSimulation isPlaying={isPlaying} />;
       case 'ecosystem-balance':
         return <EcosystemBalanceSimulation isPlaying={isPlaying} />;
       default:
         return (
-          <div className="bg-gradient-to-br from-green-200 to-blue-200 rounded-xl h-96 flex items-center justify-center">
-            <p className="text-gray-600">Simulation coming soon...</p>
+          <div className="bg-gradient-to-br from-green-200 to-blue-200 rounded-xl h-96 flex items-center justify-center shadow-2xl">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Play className="w-8 h-8 text-white" />
+              </div>
+              <p className="text-gray-700 font-semibold text-lg">Advanced Simulation Loading...</p>
+              <p className="text-gray-600 text-sm mt-2">This simulation is being enhanced with 3D visuals</p>
+            </div>
           </div>
         );
     }
